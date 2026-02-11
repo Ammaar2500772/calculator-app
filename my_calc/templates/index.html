@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Cloud Calculator</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        .box { display: inline-block; background: #f0f0f0; padding: 20px; border-radius: 10px; }
+        input, select, button { padding: 10px; margin: 5px; }
+        button { background: blue; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>☁️ Cloud Calculator</h2>
+        <form method="POST">
+            <input type="number" name="num1" placeholder="First Number" required step="any">
+            <br>
+            <select name="operation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">×</option>
+                <option value="divide">÷</option>
+            </select>
+            <br>
+            <input type="number" name="num2" placeholder="Second Number" required step="any">
+            <br><br>
+            <button type="submit">Calculate</button>
+        </form>
+
+        {% if result != None %}
+            <h3>Result: {{ result }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
